@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Della Eka Nuraini | Personal Branding Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f1ea;
+            color: #4e342e;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #8b5e3c;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            color: #5d4037;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #b08968;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #b08968;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 60px 8%;
+            background: linear-gradient(rgba(248, 241, 234, 0.85), rgba(248, 241, 234, 0.85)), url('img/backgrounddella.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: #5d4037;
+        }
+
+        .hero h1 span {
+            color: #9c6644;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #6d4c41;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #9c6644, #7f5539);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(156, 102, 68, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(156, 102, 68, 0.4);
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 8px solid rgba(255, 255, 255, 0.5);
+            transition: 0.4s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+
+        /* SOCIAL */
+        .socials {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            padding: 12px 24px;
+            background: white;
+            border-radius: 50px;
+            color: #7f5539;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            background: #9c6644;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* SECTION GLOBAL */
+        section {
+            padding: 100px 8%;
+        }
+
+        .title {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #5d4037;
+        }
+
+        .title span {
+            color: #9c6644;
+        }
+
+        /* ABOUT */
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 380px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 8px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: 0.4s;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.03);
+        }
+
+        .about-text {
+            line-height: 1.9;
+            font-size: 16px;
+            color: #6d4c41;
+        }
+
+        /* SKILLS SECTION STYLE */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f1dfd1;
+            transition: 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(156, 102, 68, 0.1);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .skill-info h3 {
+            font-size: 18px;
+            color: #5d4037;
+            font-weight: 600;
+        }
+
+        .skill-info span {
+            font-size: 14px;
+            color: #9c6644;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #f1dfd1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #b08968, #9c6644);
+            border-radius: 10px;
+        }
+
+        /* GRID SYSTEM GLOBAL */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* CARD PROJECTS */
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: 0.4s;
+            border: 1px solid #f1dfd1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #7f5539;
+        }
+
+        .card p {
+            line-height: 1.8;
+            color: #6d4c41;
+        }
+
+        /* CERTIFICATE DESIGN */
+        .certificate-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+            transition: 0.4s;
+            border: 1px solid #f1dfd1;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .certificate-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .certificate-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .certificate-content h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #8b5e3c;
+        }
+
+        .certificate-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6d4c41;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .stat {
+            background: linear-gradient(135deg, #9c6644, #7f5539);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 30px rgba(156, 102, 68, 0.2);
+            transition: 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat h2 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-box p {
+            margin-bottom: 18px;
+            font-size: 16px;
+            color: #5d4037;
+        }
+
+        .contact-form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            background: #f8f1ea;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            font-size: 15px;
+            color: #4e342e;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            height: 140px;
+            resize: none;
+        }
+
+        .contact-form button {
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            background: #9c6644;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #7f5539;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #7f5539;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-social a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .footer-social a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE LAYOUT */
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            body {
+                padding-top: 130px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 40px 5%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-image img {
+                width: 260px;
+                height: 260px;
+            }
+
+            .socials {
+                justify-content: center;
+            }
+
+            .about-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-image img {
+                height: 380px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">DellaEkaNuraini.</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#stats">Stats</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Halo, Saya <br><span>Della Eka Nuraini</span></h1>
+            <p>
+                Creative Digital Enthusiast yang berfokus pada Web Development,
+                Digital Marketing, dan Desain Kreatif. Saya senang mengubah
+                ide menjadi pengalaman digital yang modern, menarik,
+                dan bermanfaat.
+            </p>
+            <a href="#projects" class="btn">Lihat Portfolio</a>
+            <div class="socials">
+                <a href="https://www.instagram.com/adelladea?igsh=bDFyYm9lN3k2Nmph">Instagram</a>
+                <a href="https://wa.link/zjt5f5">WhatsApp</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/potodellanew.png" alt="Della Eka Nuraini">
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="title">Tentang <span>Saya</span></h2>
+        <div class="about-wrapper">
+            <div class="about-image">
+                <img src="img/fotodellaportofolio.jpeg" alt="Della Eka Nuraini">
+            </div>
+            <div class="about-text">
+                <p>
+                    <strong>Mengenal Della Eka Nuraini</strong><br><br>
+                    Halo semuanya! Perkenalkan, saya Della Eka Nuraini, seorang mahasiswa IT yang memiliki minat besar dalam dunia teknologi, desain digital, dan pengembangan website. Saya percaya bahwa teknologi bukan hanya tentang coding, tetapi juga tentang bagaimana menciptakan solusi yang kreatif, bermanfaat, dan menarik bagi banyak orang.
+                </p>
+                <br>
+                <p>
+                    Sebagai mahasiswa di bidang teknologi informasi, saya terus belajar dan mengembangkan kemampuan dalam web development, desain visual, digital marketing, serta pengelolaan konten digital. Saya menyukai proses belajar hal baru dan mencoba berbagai pengalaman yang dapat meningkatkan kemampuan diri saya.
+                </p>
+                <br>
+                <p>
+                    Saya senang menciptakan tampilan visual yang aesthetic, modern, dan menarik agar dapat memberikan pengalaman digital yang nyaman dan profesional dengan semangat belajar dan kreativitas tinggi.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="title">Keahlian <span>Saya</span></h2>
+        <div class="skills-grid">
+            
+            <div class="skill-card">
+                <div class="skill-info">
+                    <h3>Web Development (HTML/CSS)</h3>
+                    <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-info">
+                    <h3>UI/UX & Creative Design</h3>
+                    <span>80%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-info">
+                    <h3>Digital Marketing</h3>
+                    <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-info">
+                    <h3>Content Management</h3>
+                    <span>80%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="stats">
+        <h2 class="title">My <span>Statistics</span></h2>
+        <div class="stats">
+            <div class="stat">
+                <h2>1+</h2>
+                <p>Project Selesai</p>
+            </div>
+            <div class="stat">
+                <h2>3+</h2>
+                <p>Sertifikat</p>
+            </div>
+            <div class="stat">
+                <h2>1+</h2>
+                <p>Tahun Belajar</p>
+            </div>
+            <div class="stat">
+                <h2>100%</h2>
+                <p>Semangat Berkembang</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="title">Featured <span>Projects</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    Pengembangan platform portofolio digital yang dirancang untuk merepresentasikan identitas profesional secara komprehensif. Situs ini mengintegrasikan desain modern yang estetik dengan fungsionalitas responsif untuk memastikan pengalaman pengguna yang optimal di berbagai perangkat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2 class="title">Certificates & <span>Achievements</span></h2>
+        <div class="grid">
+            
+            <div class="certificate-card">
+                <img src="img/sertifikatliqo.jpeg" alt="sertifikat liqo">
+                <div class="certificate-content">
+                    <h3>Sertifikat Liqo Syawal</h3>
+                    <p>Semoga momentum ini dapat mempererat tali silaturahmi serta meningkatkan semangat kebersamaan dan ketakwaan kita kepada Allah SWT.</p>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <img src="img/sertifikatpawai.jpeg" alt="sertifikat tarhib">
+                <div class="certificate-content">
+                    <h3>Sertifikat Tarhib</h3>
+                    <p>Semoga keikutsertaan ini menjadi syiar Islam yang membawa keberkahan dan mempererat ukhuwah Islamiyah di tengah masyarakat.</p>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <img src="img/sertifikatworkshopsmelt.jpeg" alt="sertifikat workshop">
+                <div class="certificate-content">
+                    <h3>Sertifikat Workshop SMELT</h3>
+                    <p>Semoga ilmu dan pengalaman yang diperoleh dapat bermanfaat serta meningkatkan kemampuan dan wawasan ke depannya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="title">Contact <span>Me</span></h2>
+        <div class="contact-box">
+            <p><strong>Nama:</strong> Della Eka Nuraini</p>
+            <p><strong>Email:</strong> dellaekaaini@gmail.com</p>
+            <p><strong>WhatsApp:</strong> +62882010393284</p>
+            <p><strong>Instagram:</strong> @adelladea</p>
+            <p><strong>Lokasi:</strong> Bogor</p>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Masukkan Nama" required>
+                <input type="email" placeholder="Masukkan Email" required>
+                <textarea placeholder="Tulis Pesan" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Della Eka Nuraini • Personal Branding Portfolio</p>
+        <div class="footer-social">
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+    </footer>
+
+</body>
+</html>
